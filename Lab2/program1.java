@@ -2,7 +2,7 @@ import java.util.*;
 
 public class program1 {
 
-    // Static variable to store the input array of N numbers
+    //Static variable to store the input array of N numbers
     static int[] numbersArray;
 
     // Static method to find the top K numbers with the highest occurrences
