@@ -29,4 +29,20 @@ In the context of daily share trading, this program simulates a trader who can m
 - **Programming Language**: Java
 
 ---
+# Lab 3: Employee Payroll System
 
+## Overview
+The Employee Payroll System is a Java application designed to manage employee roles and payment structures at CHRIST (Deemed to be University) using object-oriented programming principles.
+
+## Features
+- Supports Hourly, Salaried, and Executive employees.
+- Calculates weekly and annual salaries.
+- Computes tailored bonuses based on employee type.
+- Validates employee data.
+- Provides detailed employee reports.
+
+## Class Hierarchy
+1. **Employee**: Base class with attributes like `employeeId`, `employeeName`, and `designation`. Contains methods for bonus calculation and displaying details.
+2. **HourlyEmployee**: Inherits from Employee, adding `hourlyRate` and `hoursWorked`. Calculates weekly pay and overrides bonus calculation.
+3. **SalariedEmployee**: Inherits from Employee with `monthlySalary`. Calculates weekly pay based on monthly salary and overrides bonus calculation.
+4. **ExecutiveEmployee**: Inherits from SalariedEmployee, adding `bonusPercentage`. Overrides bonus calculation to include percentage-based bonuses.
