@@ -46,3 +46,34 @@ The Employee Payroll System is a Java application designed to manage employee ro
 2. **HourlyEmployee**: Inherits from Employee, adding `hourlyRate` and `hoursWorked`. Calculates weekly pay and overrides bonus calculation.
 3. **SalariedEmployee**: Inherits from Employee with `monthlySalary`. Calculates weekly pay based on monthly salary and overrides bonus calculation.
 4. **ExecutiveEmployee**: Inherits from SalariedEmployee, adding `bonusPercentage`. Overrides bonus calculation to include percentage-based bonuses.
+# Lab4 - Java: Robber Class Inheritance and Method Implementation
+
+## Problem Statement
+
+In this lab, we are tasked with establishing an abstract class named `Robber` and a class named `JAVAProfessionalRobber` that extends `Robber`. The main objectives are as follows:
+
+1. **Abstract Class**: 
+   - Create an abstract class `Robber` with a function `RobbingClass` that prints `"MScAI&ML"`.
+   - The abstract class will also include an abstract method for `RowHouses()`, `RoundHouses()`, `SquareHouse()`, and `RectangleHouse()`.
+   - A default method `MachineLearning` will also be implemented in the abstract class, which prints `"I love MachineLearning."`.
+
+2. **Concrete Class**:
+   - Create a class `JAVAProfessionalRobber` that inherits from the abstract class `Robber` and implements the four abstract methods: `RowHouses()`, `RoundHouses()`, `SquareHouse()`, and `RectangleHouse()`.
+
+### Class Structure
+
+1. **Robber (Abstract Class)**:
+   - Contains a method `RobbingClass()` which prints `"MScAI&ML"`.
+   - Contains four abstract methods:
+     - `RowHouses()`
+     - `RoundHouses()`
+     - `SquareHouse()`
+     - `RectangleHouse()`
+   - Contains a default method `MachineLearning()` that prints `"I love MachineLearning."`.
+
+2. **JAVAProfessionalRobber (Concrete Class)**:
+   - Inherits from `Robber` and implements all abstract methods:
+     - `RowHouses()`
+     - `RoundHouses()`
+     - `SquareHouse()`
+     - `RectangleHouse()`
