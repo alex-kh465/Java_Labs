@@ -77,3 +77,114 @@ In this lab, we are tasked with establishing an abstract class named `Robber` an
      - `RoundHouses()`
      - `SquareHouse()`
      - `RectangleHouse()`
+
+# Lab5 - Bank System and Water Conservation
+
+This project consists of two problems: a Bank System to calculate interest based on balances and a Water Conservation System for calculating the volume of water that can be trapped between city blocks during the rainy season.
+
+## Problem 1: Bank System
+An interface `BankInterface` is created with abstract methods `getBalance` and `getInterestRate`. Three banks, `BankA`, `BankB`, and `BankC`, implement this interface, each defining their own balance and interest rates:
+
+- **BankA**: Interest rate of 7% on the balance.
+- **BankB**: Interest rate of 7.4% on the balance.
+- **BankC**: Interest rate of 7.9% on the balance.
+
+The program deposits different amounts into each bank:
+- Bank A: 10,000
+- Bank B: 150,000
+- Bank C: 200,000
+
+It then displays the balance and interest rate of each bank separately.
+
+## Problem 2: Water Conservation System
+An interface `WaterConservationSystem` defines the method `calculateTrappedWater(int[] blockHeights)`, which calculates the amount of water that can be trapped between city blocks during rainfall. 
+
+- An abstract class `RainySeasonConservation` implements the `WaterConservationSystem` interface, serving as a base for different implementations.
+- The class `CityBlockConservation` extends `RainySeasonConservation` and implements the `calculateTrappedWater(int[] blockHeights)` method to calculate the total trapped water based on the heights of city blocks.
+
+# Lab6 - Currency Combinations and Coffee Shop Simulation
+
+This project consists of two problems: **Currency Combinations** to find the number of ways to make a given sum using different coin denominations, and a **Coffee Shop Simulation** to manage interactions between baristas (producers), customers (consumers), and a coffee reviewer (observer), ensuring proper synchronization using multithreading.
+
+## Problem 1: Currency Combinations
+You are given an integer array `coins[]` representing different denominations of currency and an integer `sum`. The task is to find the number of ways to make the given sum by using different combinations of the coins array. 
+
+- **Input**: 
+  - `N = 3`, `sum = 4`, coins = {1, 2, 3}
+- **Output**: 
+  - `4` (Four possible ways: {1, 1, 1, 1}, {1, 1, 2}, {2, 2}, {1, 3})
+
+Multithreading is incorporated to optimize the computation of different combinations. Multiple threads are used to explore and calculate the various combinations concurrently, ensuring faster processing for larger inputs.
+
+## Problem 2: Coffee Shop Simulation
+A coffee shop simulation where baristas (producers) prepare coffee orders, and customers (consumers) pick them up. Additionally, a coffee reviewer (observer) randomly samples coffee from the counter to rate its quality.
+
+- **Synchronization**:
+  - Baristas stop making coffee if the counter is full, and customers wait if the counter is empty.
+  - The reviewer only attempts to sample when at least one coffee is available.
+  - A custom exception `CounterEmptyException` is used when the counter is empty.
+  - The program uses `wait()` and `notify()` to synchronize interactions between baristas, customers, and the reviewer.
+
+
+### Example Input and Output
+**Inputs**:
+- Baristas' tasks:
+  - Barista 1: Prepares 2 coffees.
+  - Barista 2: Prepares 3 coffees.
+- Customers' tasks:
+  - Customer 1: Picks up 1 coffee.
+  - Customer 2: Picks up 2 coffees.
+  - Customer 3: Picks up 1 coffee.
+- Coffee Reviewer task: Samples 1 coffee for review.
+
+**Expected Output**:
+
+Barista 1 prepared coffee. Counter: 1
+Barista 1 prepared coffee. Counter: 2
+Barista 2 prepared coffee. Counter: 3
+Barista 2 is waiting. Counter is full.
+Customer 1 picked up coffee. Counter: 2
+Barista 2 prepared coffee. Counter: 3
+Barista 2 is waiting. Counter is full.
+Customer 2 picked up coffee. Counter: 2
+Customer 2 picked up coffee. Counter: 1
+Barista 2 prepared coffee. Counter: 2
+Customer 3 picked up coffee. Counter: 1
+Coffee Reviewer sampled coffee. Counter: 0
+Barista 1 is notified. Counter is empty.
+Barista 2 is notified. Counter is empty.
+
+
+# Lab7 - Amazon Menu-Driven Application
+
+This project simulates an Amazon system to manage customer data and process orders efficiently using object-oriented concepts and various data structures. It involves creating classes to manage customer information, products, and orders, while using multithreading, custom sorting, and synchronization techniques.
+
+## Problem Description
+
+### **Customer Class**
+- Manages customer details, including registration and updates.
+  
+### **Product Class**
+- Represents products and allows the addition and update of product details in the catalog.
+
+### **Order Class**
+- Facilitates order placement, modification, and retrieval of order history.
+
+### **Data Structures Used**
+- **ArrayList**: Stores dynamic lists of customers, products, and orders, allowing flexible addition and removal of elements.
+- **HashMap**: Enables fast retrieval of customers and products using unique IDs.
+- **HashSet**: Ensures only unique products are associated with each customer, preventing duplicates.
+- **TreeSet**: Implements sorting for customers or products based on custom attributes.
+
+### **Custom Sorting**
+The `Comparator` interface is used to enable custom sorting in the `TreeSet`:
+- Sort products by price, name, or other attributes.
+- Sort orders by delivery date or customers by loyalty points.
+
+### Example Operations
+- Adding new customers and products.
+- Creating orders with specific products and calculating order history.
+- Sorting products by price and customers by loyalty points using the custom sorting functionality.
+
+### **Multithreading Concepts**
+- Use of multithreading to process orders concurrently for customers, ensuring efficiency and real-time updates to product inventory and customer data.
